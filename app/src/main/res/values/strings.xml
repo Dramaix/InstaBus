@@ -2,4 +2,5 @@
     <string name="app_name">InstaBus</string>
     <string name="instabus">InstaBus</string>
     <string name="barcelone">barcelone</string>
+    <string name="liste_des_stations_de_bus">Liste des stations de bus</string>
 </resources>
