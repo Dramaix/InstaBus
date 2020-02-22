@@ -26,6 +26,13 @@
         android:contentDescription="@string/barcelone"
         tools:ignore="MissingConstraints" />
 
+    <Button
+        android:id="@+id/search_all_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:text="@string/liste_des_stations_de_bus"/>
 
 
 
