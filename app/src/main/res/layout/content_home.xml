@@ -9,29 +9,15 @@
     android:orientation="vertical"
     >
 
-    <LinearLayout
-        android:id="@+id/inside_linear_layout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:scaleType="fitCenter">
-
-        <TextView
+    <TextView
             android:id="@+id/welcome"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="20dp"
             android:layout_marginTop="32dp"
             android:layout_weight="0.1"
             android:gravity="center"
-            android:text="@string/instabus"/>
-
-    </LinearLayout>
+            android:text="@string/instabus"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -39,6 +25,8 @@
         android:src="@drawable/fond"
         android:contentDescription="@string/barcelone"
         tools:ignore="MissingConstraints" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
