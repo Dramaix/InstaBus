@@ -9,36 +9,38 @@
     android:orientation="vertical"
     >
 
-    <LinearLayout
-        android:id="@+id/inside_linear_layout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
 
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="parent"
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:textSize="150sp"
+        android:gravity="center"
+        android:text="@string/instabus"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:scaleType="fitCenter">
-
-        <TextView
-            android:id="@+id/welcome"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="32dp"
-            android:layout_weight="0.1"
-            android:gravity="center"
-            android:text="@string/instabus"/>
-
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/fond"
+        android:layout_height="1201dp"
         android:contentDescription="@string/barcelone"
+        android:src="@drawable/fond"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/search_all_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/lancer_la_recherche"
+        tools:ignore="MissingConstraints" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
