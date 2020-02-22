@@ -19,6 +19,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".stations.StationsListActivity"
+            android:parentActivityName=".stations.StationsListActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".stations.StationsListActivity"/>
+
+        </activity>
+        <activity android:name=".AboutActivity"
+            android:parentActivityName=".stations.StationsListActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

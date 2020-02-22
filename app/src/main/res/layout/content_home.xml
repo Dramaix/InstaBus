@@ -18,7 +18,7 @@ android:weightSum="1"
     android:orientation="vertical"
 
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toTopOf="@+id/search_all_button"
+    app:layout_constraintBottom_toTopOf="@+id/btn_view"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
 
@@ -51,7 +51,7 @@ android:weightSum="1"
 
 </LinearLayout>
     <Button
-        android:id="@+id/search_all_button"
+        android:id="@+id/btn_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/inside_linear_layout"

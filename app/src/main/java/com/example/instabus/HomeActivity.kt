@@ -1,14 +1,35 @@
 package com.example.instabus
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import com.example.instabus.stations.StationsListActivity
+import kotlinx.android.synthetic.main.content_home.*
 
 class HomeActivity : AppCompatActivity() {
+
+    companion object {
+        fun start(context: Context) {
+            val intent = Intent(context, HomeActivity::class.java)
+            context.startActivity(intent)
+        }
+    }
+
     private val TAG = "HomeActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+
+        btn_view.setOnClickListener{
+
+            StationsListActivity.start(this)
+            Log.i(TAG, "View list of bus station :D ")
+        }
+
 
         Log.i(TAG, "onCreate")
     }

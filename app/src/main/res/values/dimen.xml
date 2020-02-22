@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="container_padding">16dp</dimen>
+
+    <dimen name="cocktail_icon_dimen">50dp</dimen>
+    <dimen name="cocktail_detail_dimen">300dp</dimen>
+
+    <dimen name="header_cocktail_margin">8dp</dimen>
+    <dimen name="header_cocktail_size">30dp</dimen>
+    <dimen name="cocktail_item_height">70dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+</resources>

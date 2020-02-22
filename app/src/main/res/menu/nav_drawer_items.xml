@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group_cocktails">
+        <item
+            android:id="@+id/action_cocktails"
+            android:title="@string/stationview"
+            android:icon="@drawable/icon"/>
+    </group>
+
+    <group android:id="@+id/group_home_favorites">
+        <item
+            android:id="@+id/action_home"
+            android:title="@string/accueil"
+            android:icon="@drawable/icon" />
+        <item
+            android:id="@+id/action_favorites"
+            android:title="@string/favoris"
+            android:icon="@drawable/icon"/>
+    </group>
+
+    <group android:id="@+id/group_settings_about">
+        <item
+            android:id="@+id/action_settings"
+            android:title="@string/param_tres"
+            android:icon="@drawable/icon" />
+
+        <item
+            android:id="@+id/action_about"
+            android:title="@string/about1"
+            android:icon="@drawable/icon"/>
+    </group>
+
+</menu>
