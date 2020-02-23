@@ -36,6 +36,7 @@ class StationsDetailActivity : AppCompatActivity() {
 
         station = intent.getParcelableExtra(EXTRA_STATION)
 
+        station_image
         station_name.text = station.street_name
         city_name.text = station.city
         longitude_name.text = station.lon
