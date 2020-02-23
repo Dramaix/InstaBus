@@ -58,7 +58,6 @@ class StationsListActivity : AppCompatActivity(), NavigationView.OnNavigationIte
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
-        val filter = intent.getStringExtra(EXTRA_STATION_FILTER)
 
         nav_view.setNavigationItemSelectedListener(this)
         val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav_drawer, R.string.close_nav_drawer)
@@ -67,11 +66,13 @@ class StationsListActivity : AppCompatActivity(), NavigationView.OnNavigationIte
 
 
 
-        recyclerView = findViewById(R.id.cocktails_recycler_view)
-        swipeLayout = findViewById(R.id.swipe_layout)
-        swipeLayout.setOnRefreshListener {
-            evaluateCocktailList(filter)
-        }
+        recyclerView=findViewById(R.id.recycler_view)
+        viewModel= StationsViewModel(this.application)
+        viewModel.station.observe(this, Observer {
+            val adapter = StationsAdapter(this@StationsListActivity,it,this@StationsListActivity)
+            recyclerView.layoutManager=LinearLayoutManager(this)
+            recyclerView.adapter=adapter
+        })
 
 
         Log.i(TAG, "onCreate")
@@ -87,9 +88,6 @@ class StationsListActivity : AppCompatActivity(), NavigationView.OnNavigationIte
         return true
     }
 
-    private fun evaluateCocktailList(filterValue: String) {
-        viewModel.findCocktails(filterValue)
-    }
 
     override fun onStationsItemClick(stations: Station) {
 

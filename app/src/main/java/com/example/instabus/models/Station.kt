@@ -1,31 +1,47 @@
 package com.example.instabus.models
 
+
 import android.os.Parcel
 import android.os.Parcelable
-import com.squareup.moshi.Json
 
-data class Station(
-    @Json(name = "id") val id: Int,
-    @Json(name = "street_name") val name: String?,
-    @Json(name = "city") val name_city: String?,
-    @Json(name = "lon") val longitude: Int,
-    @Json(name = "lat") val latitude: Int) : Parcelable {
+class Station (
+    val id: Int,
+    val street_name: String,
+    val city: String,
+    val utm_x:String,
+    val utm_y:String,
+    val lat:String,
+    val lon:String,
+    val furniture:String,
+    val buses:String,
+    val distance:String
 
+):Parcelable{
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString().toString(),
         parcel.readString().toString(),
-        parcel.readInt(),
-        parcel.readInt()
+        parcel.readString().toString(),
+        parcel.readString().toString(),
+        parcel.readString().toString(),
+        parcel.readString().toString(),
+        parcel.readString().toString(),
+        parcel.readString().toString(),
+        parcel.readString().toString()
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(id)
-        parcel.writeString(name)
-        parcel.writeString(name_city)
-        parcel.writeInt(longitude)
-        parcel.writeInt(latitude)
+        parcel.writeString(street_name)
+        parcel.writeString(city)
+        parcel.writeString(utm_x)
+        parcel.writeString(utm_y)
+        parcel.writeString(lat)
+        parcel.writeString(lon)
+        parcel.writeString(furniture)
+        parcel.writeString(buses)
+        parcel.writeString(distance)
     }
 
     override fun describeContents(): Int {
@@ -41,4 +57,5 @@ data class Station(
             return arrayOfNulls(size)
         }
     }
+
 }

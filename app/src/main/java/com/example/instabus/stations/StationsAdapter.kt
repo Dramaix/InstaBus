@@ -38,10 +38,9 @@ class StationsAdapter (private val context: Context, private val stations: List<
             cardView?.setOnClickListener {
                 itemListener.onStationsItemClick(station!!)
             }
-            stationName?.text = station?.name
-            // cocktailImage?.setImageURI(Uri.parse(cocktail?.resId))
+            stationName?.text = station?.street_name
             Glide.with(context)
-                .load(station?.name)
+                .load(station?.street_name)
         }
     }
 

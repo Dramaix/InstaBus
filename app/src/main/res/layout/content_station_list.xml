@@ -18,7 +18,7 @@
         app:layout_constraintRight_toRightOf="parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/cocktails_recycler_view"
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/item_station"

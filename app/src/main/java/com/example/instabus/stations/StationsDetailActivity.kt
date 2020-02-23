@@ -36,10 +36,10 @@ class StationsDetailActivity : AppCompatActivity() {
 
         station = intent.getParcelableExtra(EXTRA_STATION)
 
-        station_name.text = station.name
-        city_name.text = station.name_city.toString()
-        longitude_name.text = station.longitude.toString()
-        latitude_name.text = station.latitude.toString()
+        station_name.text = station.street_name
+        city_name.text = station.city
+        longitude_name.text = station.lon
+        latitude_name.text = station.lat
     }
 
 }

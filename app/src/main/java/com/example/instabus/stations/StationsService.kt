@@ -1,15 +1,11 @@
 package com.example.instabus.stations
 
-import com.example.instabus.models.Drink
+import com.example.instabus.models.Data
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Query
 
 interface StationsService {
-    @GET("filter.php?c=Cocktail")
-    suspend fun getAllCocktails(): Response<Drink>
 
-    @GET("search.php")
-    suspend fun getCocktailsFilteredByName(@Query("s") name: String): Response<Drink>
-
+    @GET("/bus/nearstation/latlon/%2041.3985182/2.1917991/1.json")
+    suspend fun getStationData():Response<Data>
 }
