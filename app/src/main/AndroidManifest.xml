@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.instabus">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="false"
         android:icon="@drawable/icon"
@@ -21,15 +26,24 @@
         </activity>
         <activity android:name=".stations.StationsListActivity"
             android:parentActivityName=".stations.StationsListActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:targetApi="jelly_bean">
 
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".stations.StationsListActivity"/>
 
         </activity>
+        <activity android:name=".stations.StationsDetailActivity"
+            android:parentActivityName=".stations.StationsListActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:targetApi="jelly_bean">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".stations.StationsListActivity" />
+        </activity>
         <activity android:name=".AboutActivity"
             android:parentActivityName=".stations.StationsListActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:targetApi="jelly_bean" />
     </application>
 
 </manifest>

@@ -5,21 +5,27 @@ import android.os.Parcelable
 import com.squareup.moshi.Json
 
 data class Station(
-    @Json(name = "idDrink") val id: Int,
-    @Json(name = "strDrink") val name: String?,
-    @Json(name = "strDrinkThumb") val resId: String?) : Parcelable {
+    @Json(name = "id") val id: Int,
+    @Json(name = "street_name") val name: String?,
+    @Json(name = "city") val name_city: String?,
+    @Json(name = "lon") val longitude: Int,
+    @Json(name = "lat") val latitude: Int) : Parcelable {
 
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString().toString(),
-        parcel.readString().toString()
+        parcel.readString().toString(),
+        parcel.readInt(),
+        parcel.readInt()
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(id)
         parcel.writeString(name)
-        parcel.writeString(resId)
+        parcel.writeString(name_city)
+        parcel.writeInt(longitude)
+        parcel.writeInt(latitude)
     }
 
     override fun describeContents(): Int {

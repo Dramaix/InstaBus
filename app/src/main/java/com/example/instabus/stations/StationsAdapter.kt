@@ -12,17 +12,16 @@ import com.bumptech.glide.Glide
 import com.example.instabus.R
 import com.example.instabus.models.Station
 
-class StationsAdapter (private val context: Context, private val stations: List<Station>?, val itemListener: CocktailItemListener) :
+class StationsAdapter (private val context: Context, private val stations: List<Station>?, val itemListener: StationsItemListener) :
     RecyclerView.Adapter<StationsAdapter.ViewHolder>() {
 
-    interface CocktailItemListener {
-        fun onCocktailItemClick(cocktail: Station)
+    interface StationsItemListener {
+        fun onStationsItemClick(stations: Station)
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val cardView: CardView? = itemView.findViewById(R.id.cardview)
-        val cocktailImage: ImageView? = itemView.findViewById(R.id.card_view_cocktail_image)
-        val cocktailName: TextView? = itemView.findViewById(R.id.card_view_cocktail_name)
+        val stationName: TextView? = itemView.findViewById(R.id.card_view_stations_name)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,19 +31,17 @@ class StationsAdapter (private val context: Context, private val stations: List<
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val cocktail = stations?.get(position)
+        val station = stations?.get(position)
 
         with(holder) {
             cardView?.tag = position
             cardView?.setOnClickListener {
-                itemListener.onCocktailItemClick(cocktail!!)
+                itemListener.onStationsItemClick(station!!)
             }
-            cocktailName?.text = cocktail?.name
+            stationName?.text = station?.name
             // cocktailImage?.setImageURI(Uri.parse(cocktail?.resId))
             Glide.with(context)
-                .load(cocktail?.resId)
-                .into(cocktailImage!!)
-            // cocktailImage?.setBackgroundResource(cocktail.resId?:-1)
+                .load(station?.name)
         }
     }
 

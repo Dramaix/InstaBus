@@ -23,10 +23,15 @@ import kotlinx.android.synthetic.main.activity_station_list_nav.*
 import kotlinx.android.synthetic.main.content_home.*
 import kotlinx.android.synthetic.main.toolbar.*
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 @SuppressLint("Registered")
-class StationsListActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, StationsAdapter.CocktailItemListener  {
+class StationsListActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, StationsAdapter.StationsItemListener  {
+    private val TAG = "StationsListActivity"
 
     companion object {
+
+
+        const val EXTRA_STATION_FILTER = "station_filter"
 
         fun start(context: Context) {
             val intent = Intent(context, StationsListActivity::class.java)
@@ -40,11 +45,12 @@ class StationsListActivity : AppCompatActivity(), NavigationView.OnNavigationIte
     }
 
 
+
+
     private lateinit var swipeLayout: SwipeRefreshLayout
     private lateinit var recyclerView: RecyclerView
+    private lateinit var viewModel: StationsViewModel
 
-
-    private val TAG = "StationsListActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_station_list_nav)
@@ -52,12 +58,20 @@ class StationsListActivity : AppCompatActivity(), NavigationView.OnNavigationIte
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
+        val filter = intent.getStringExtra(EXTRA_STATION_FILTER)
 
         nav_view.setNavigationItemSelectedListener(this)
         val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav_drawer, R.string.close_nav_drawer)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
+
+
+        recyclerView = findViewById(R.id.cocktails_recycler_view)
+        swipeLayout = findViewById(R.id.swipe_layout)
+        swipeLayout.setOnRefreshListener {
+            evaluateCocktailList(filter)
+        }
 
 
         Log.i(TAG, "onCreate")
@@ -73,9 +87,13 @@ class StationsListActivity : AppCompatActivity(), NavigationView.OnNavigationIte
         return true
     }
 
+    private fun evaluateCocktailList(filterValue: String) {
+        viewModel.findCocktails(filterValue)
+    }
 
-    override fun onCocktailItemClick(cocktail: Station) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onStationsItemClick(stations: Station) {
+
+        StationsDetailActivity.start(this, stations)
     }
 
 

@@ -34,6 +34,14 @@ class HomeActivity : AppCompatActivity() {
         Log.i(TAG, "onCreate")
     }
 
+    private fun enableSearchButton() {
+        // TODO grey out button (check background selectors)
+    }
+
+    private fun disableSearchButton() {
+        // TODO grey out button (check background selectors)
+    }
+
     override fun onStart() {
         super.onStart()
         Log.i(TAG, "onStart")

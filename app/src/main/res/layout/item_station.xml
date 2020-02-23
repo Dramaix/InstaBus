@@ -25,7 +25,7 @@
             >
 
             <ImageView
-                android:id="@+id/card_view_cocktail_image"
+                android:id="@+id/card_view_stations_image"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="centerCrop"
@@ -36,15 +36,16 @@
                 />
 
             <TextView
-                android:id="@+id/card_view_cocktail_name"
+                android:id="@+id/card_view_stations_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_toRightOf="@+id/card_view_cocktail_image"
-                android:layout_toEndOf="@+id/card_view_cocktail_image"
+                android:layout_toRightOf="@+id/card_view_stations_image"
+                android:layout_toEndOf="@+id/card_view_stations_image"
                 tools:text="Nom de la Station"
                 android:textSize="20sp"
                 android:gravity="center"
                 />
+
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

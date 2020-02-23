@@ -7,7 +7,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.toolbar.*
 
-@SuppressLint("Registered")
 class AboutActivity : AppCompatActivity() {
 
     companion object {
